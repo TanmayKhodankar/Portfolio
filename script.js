@@ -1,166 +1,70 @@
-/* ═══════════════════════════════════════════════
-   Ayush Wandhare — QA Game Tester Portfolio
-   script.js
-   ═══════════════════════════════════════════════ */
+(function(){
+  "use strict";
 
-'use strict';
-
-/* ─── Navbar scroll + active link ─── */
-const navbar      = document.getElementById('navbar');
-const scrollTopBtn = document.getElementById('scroll-top');
-const navLinks    = navbar.querySelectorAll('.nav-links a');
-const sections    = document.querySelectorAll('section[id]');
-
-function onScroll() {
-  const y = window.scrollY;
-
-  navbar.classList.toggle('scrolled', y > 40);
-  scrollTopBtn.classList.toggle('visible', y > 300);
-
-  let current = '';
-  sections.forEach(s => {
-    if (y >= s.offsetTop - 100) current = s.id;
+  // Mobile nav toggle
+  var toggle = document.getElementById('menuToggle');
+  var navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-}
+  // Active nav link on scroll
+  var sections = document.querySelectorAll('main section[id]');
+  var links = document.querySelectorAll('.nav-link');
+  var navObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        links.forEach(function(l){ l.classList.remove('active'); });
+        var active = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
+        if(active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  sections.forEach(function(s){ navObserver.observe(s); });
 
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll(); // run once on load
+  // Reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(function(el){ revealObserver.observe(el); });
 
-/* ─── Scroll-to-top button ─── */
-scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  // Typing role rotator
+  var roles = ['Software Developer', 'Data Analyst', 'React Developer', 'B.Tech IT Student'];
+  var el = document.getElementById('typedRole');
+  var ri = 0, ci = 0, deleting = false;
 
-/* ─── Dark / Light theme toggle ─── */
-const themeBtn = document.getElementById('theme-btn');
-let darkMode = document.documentElement.getAttribute('data-theme') === 'dark';
-
-function applyTheme(dark) {
-  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  themeBtn.textContent = dark ? '🌙' : '☀️';
-  themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-}
-
-// Restore saved preference
-const savedTheme = localStorage.getItem('aw-theme');
-if (savedTheme) {
-  darkMode = savedTheme === 'dark';
-  applyTheme(darkMode);
-} else {
-  applyTheme(darkMode);
-}
-
-themeBtn.addEventListener('click', () => {
-  darkMode = !darkMode;
-  applyTheme(darkMode);
-  localStorage.setItem('aw-theme', darkMode ? 'dark' : 'light');
-});
-
-/* ─── Mobile menu ─── */
-const menuBtn  = document.getElementById('menu-btn');
-const mobileNav = document.getElementById('mobile-nav');
-
-function closeMobileNav() {
-  menuBtn.classList.remove('open');
-  mobileNav.classList.remove('open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-
-menuBtn.addEventListener('click', () => {
-  const isOpen = mobileNav.classList.toggle('open');
-  menuBtn.classList.toggle('open', isOpen);
-  menuBtn.setAttribute('aria-expanded', String(isOpen));
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-document.querySelectorAll('.mobile-nav-link').forEach(a => {
-  a.addEventListener('click', closeMobileNav);
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeMobileNav();
-});
-
-/* ─── Fade-in on scroll (IntersectionObserver) ─── */
-const fadeEls = document.querySelectorAll('.fade-in');
-const fadeObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      fadeObs.unobserve(e.target);
+  function tick(){
+    var current = roles[ri];
+    if(!deleting){
+      ci++;
+      el.textContent = current.slice(0, ci);
+      if(ci === current.length){
+        deleting = true;
+        setTimeout(tick, 1400);
+        return;
+      }
+    } else {
+      ci--;
+      el.textContent = current.slice(0, ci);
+      if(ci === 0){
+        deleting = false;
+        ri = (ri + 1) % roles.length;
+      }
     }
-  });
-}, { threshold: 0.12 });
-
-fadeEls.forEach(el => fadeObs.observe(el));
-
-/* ─── Skill bar animations ─── */
-const barFills = document.querySelectorAll('.skill-bar-fill');
-const barObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const fill = e.target;
-      const w = fill.getAttribute('data-width');
-      fill.style.width = w + '%';
-      fill.classList.add('animate');
-      barObs.unobserve(fill);
-    }
-  });
-}, { threshold: 0.5 });
-
-barFills.forEach(bar => {
-  bar.style.width = '0%';
-  barObs.observe(bar);
-});
-
-/* ─── Contact form validation ─── */
-const form       = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name  = form.querySelector('#cf-name').value.trim();
-  const email = form.querySelector('#cf-email').value.trim();
-  const msg   = form.querySelector('#cf-message').value.trim();
-
-  if (!name || !email || !msg) {
-    formStatus.style.color = 'var(--warn)';
-    formStatus.textContent = '⚠ Please fill in all required fields.';
-    return;
+    setTimeout(tick, deleting ? 45 : 75);
   }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    formStatus.style.color = 'var(--warn)';
-    formStatus.textContent = '⚠ Please enter a valid email address.';
-    return;
-  }
-
-  formStatus.style.color = 'var(--success)';
-  formStatus.textContent = "✓ Message sent! I'll get back to you soon.";
-  form.reset();
-  setTimeout(() => { formStatus.textContent = ''; }, 5000);
-});
-
-/* ─── Resume button ─── */
-document.getElementById('resume-btn').addEventListener('click', (e) => {
-  e.preventDefault();
-  alert('Resume download coming soon! Please reach out via email or LinkedIn.');
-});
-
-/* ─── Smooth scroll for all internal hash links ─── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  if (a.id === 'resume-btn') return; // handled separately
-  a.addEventListener('click', (e) => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+  tick();
+})();

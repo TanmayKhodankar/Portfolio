@@ -1,497 +1,284 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tanmay Khodankar— Aspiring Data Engineer. Data Processes." />
-  <title>Ayush Wandhare — QA Game Tester</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanmay Khodankar — Software Developer & Data Analyst</title>
+<meta name="description" content="Portfolio of Tanmay Khodankar — B.Tech IT candidate specializing in data analytics and software development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+ <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <a href="#hero" class="skip-link">Skip to content</a>
-
-  <!-- ═══ NAVBAR ═══ -->
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-logo">TANMAY // DE</div>
-    <ul class="nav-links" role="list">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#certifications">Certs</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <button id="theme-btn" aria-label="Toggle theme" title="Toggle dark/light mode">🌙</button>
-      <button id="menu-btn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="dot"></span>
+      <span class="path">~/<span class="name">tanmay</span>/portfolio.tsx</span>
     </div>
-  </nav>
-
-  <!-- ═══ MOBILE NAV ═══ -->
-  <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile menu">
-    <a href="#about"          class="mobile-nav-link">About</a>
-    <a href="#skills"         class="mobile-nav-link">Skills</a>
-    <a href="#projects"       class="mobile-nav-link">Projects</a>
-    <a href="#education"      class="mobile-nav-link">Education</a>
-    <a href="#certifications" class="mobile-nav-link">Certs</a>
-    <a href="#contact"        class="mobile-nav-link">Contact</a>
+    <nav class="links" id="navLinks">
+      <a href="#about" class="nav-link">about</a>
+      <a href="#skills" class="nav-link">skills</a>
+      <a href="#experience" class="nav-link">experience</a>
+      <a href="#projects" class="nav-link">projects</a>
+      <a href="#education" class="nav-link">education</a>
+      <a href="#contact" class="nav-link">contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn" href="https://github.com/TanmayKhodankar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+      </a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/tanmay-khodankar-2a7b412a0/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.24 8.25h4.5V23h-4.5V8.25ZM8.5 8.25h4.31v2.01h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.34c0-1.51-.03-3.46-2.11-3.46-2.11 0-2.43 1.65-2.43 3.35V23h-4.5V8.25Z"/></svg>
+      </a>
+      <a class="icon-btn" href="mailto:tanmaykhodankar05@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M2 5.5h20v13H2z"/><path d="m2 6 10 7 10-7"/></svg>
+      </a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
+</header>
 
-  <!-- ═══ HERO ═══ -->
-  <section id="hero">
-    <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="hero-grid section-inner">
-
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <div class="hero-dot" aria-hidden="true"></div>
-          <span>Available for opportunities</span>
-        </div>
-        <h1 class="hero-name">Tanmay<br /><span>Khodankar</span></h1>
-        <p class="hero-role">Aspiring Data Engineer &amp; College Grad</p>
-        <p class="hero-desc">Passionate about game quality and player experience. I break games before players do — finding bugs, documenting issues, and ensuring polished releases.</p>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="blink"></span> Open to Software Engineering roles</div>
+        <h1 class="hero-title">Tanmay <span class="accent">Khodankar</span></h1>
+        <div class="hero-role">&gt; <span id="typedRole"></span><span class="cursor"></span></div>
+        <p class="hero-desc">B.Tech Information Technology candidate (2027) focused on <strong style="color:var(--text-primary)">data analytics</strong> and <strong style="color:var(--text-primary)">software development</strong> — building with Python, SQL, and React while turning raw data into decisions.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Get In Touch ↗</a>
-          <a href="https://github.com/ayushwandhare" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
-          <a href="https://linkedin.com/in/ayushwandhare" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
-          <a href="#" class="btn btn-outline" id="resume-btn">Resume ↓</a>
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="mailto:tanmaykhodankar05@gmail.com" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Vidisha, India</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .35 1.99.67 2.94a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.14-1.14a2 2 0 0 1 2.11-.45c.95.32 1.94.54 2.94.67A2 2 0 0 1 22 16.92Z"/></svg> +91 93090 54775</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5.5h20v13H2z"/><path d="m2 6 10 7 10-7"/></svg> tanmaykhodankar05@gmail.com</span>
         </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <div class="hero-avatar" aria-hidden="true">🎮</div>
-            <div class="hero-card-name">Ayush Wandhare</div>
-            <div class="hero-card-role">QA GAME TESTER</div>
-            <div class="hero-card-stats">
-              <div class="hero-stat">
-                <strong>50+</strong>
-                <span>Bugs Found</span>
-              </div>
-              <div class="hero-stat">
-                <strong>8+</strong>
-                <span>Projects</span>
-              </div>
-              <div class="hero-stat">
-                <strong>3+</strong>
-                <span>Years Exp</span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-badge">🟢 Open to Work</div>
+      <div class="editor reveal">
+        <div class="editor-bar">
+          <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+          <span class="editor-tab">profile.py</span>
+        </div>
+        <div class="editor-body">
+          <div><span class="ln">1</span><span class="k">class</span> <span class="f">Developer</span>:</div>
+          <div><span class="ln">2</span>&nbsp;&nbsp;<span class="p">name</span> = <span class="s">"Tanmay Khodankar"</span></div>
+          <div><span class="ln">3</span>&nbsp;&nbsp;<span class="p">degree</span> = <span class="s">"B.Tech, IT"</span> <span class="c"># 2027</span></div>
+          <div><span class="ln">4</span>&nbsp;&nbsp;<span class="p">focus</span> = [<span class="s">"Data Analytics"</span>, <span class="s">"SWE"</span>]</div>
+          <div><span class="ln">5</span>&nbsp;&nbsp;<span class="p">stack</span> = [<span class="s">"Python"</span>, <span class="s">"SQL"</span>, <span class="s">"React"</span>]</div>
+          <div><span class="ln">6</span></div>
+          <div><span class="ln">7</span>&nbsp;&nbsp;<span class="k">def</span> <span class="f">ship</span>(<span class="p">self</span>):</div>
+          <div><span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">"production-ready"</span></div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ═══ ABOUT ═══ -->
+  <!-- ABOUT -->
   <section id="about">
-    <div class="section-inner">
-      <p class="section-label">01 / About</p>
-      <h2 class="section-title fade-in">The person behind<br />the bug reports</h2>
-      <div class="section-line fade-in"></div>
-
-      <div class="about-grid">
-        <div class="about-img-wrap fade-in">
-          <div class="about-img-box">
-            <span class="placeholder-emoji" aria-hidden="true">👾</span>
-          </div>
-          <div class="about-img-accent" aria-hidden="true"></div>
-        </div>
-
-        <div class="about-text">
-          <p class="fade-in">Hi! I'm Ayush — a QA Game Tester from Nagpur, India. I thrive at the intersection of gaming and quality assurance, where attention to detail makes the difference between a frustrating experience and an unforgettable one.</p>
-          <p class="fade-in delay-1">I specialize in manual testing, bug documentation, game mechanics validation, and regression testing. My approach is methodical yet creative — thinking like a player while documenting like an engineer.</p>
-          <p class="fade-in delay-2">When I'm not hunting bugs, I'm playing games, contributing to open-source, and learning new tools to sharpen my QA craft.</p>
-
-          <div class="about-facts fade-in delay-3">
-            <div class="about-fact">
-              <div class="label">Location</div>
-              <div class="value">Nagpur, India</div>
-            </div>
-            <div class="about-fact">
-              <div class="label">Role</div>
-              <div class="value">QA Game Tester</div>
-            </div>
-            <div class="about-fact">
-              <div class="label">Status</div>
-              <div class="value" style="color:var(--success)">✓ Available</div>
-            </div>
-            <div class="about-fact">
-              <div class="label">Focus</div>
-              <div class="value">Game Quality</div>
-            </div>
-          </div>
-        </div>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-tag">about</div>
+        <h2 class="section-title">Summary</h2>
+      </div>
+      <div class="about-card reveal">
+        <div class="quote-mark">"</div>
+        <p>Dedicated IT degree candidate <strong>(B.Tech, 2027)</strong> with a concentration in data analytics and software development. Experienced and competent with <strong>Python, SQL, and data visualization</strong>, with good working knowledge of databases and analytics solutions. Enthused to further develop technical and analytical capabilities while building software solutions and progressing toward a career in <strong>software engineering</strong>.</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SKILLS ═══ -->
+  <!-- SKILLS -->
   <section id="skills">
-    <div class="section-inner">
-      <p class="section-label">02 / Skills</p>
-      <h2 class="section-title fade-in">Tools &amp; Techniques</h2>
-      <div class="section-line fade-in"></div>
-
-      <div class="skills-categories">
-
-        <div class="skill-category fade-in">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">🐛</div>
-            <div class="skill-cat-title">Testing</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Manual Testing</span>
-            <span class="skill-tag">Regression Testing</span>
-            <span class="skill-tag">Smoke Testing</span>
-            <span class="skill-tag">Exploratory Testing</span>
-            <span class="skill-tag">Functional Testing</span>
-            <span class="skill-tag">UI/UX Testing</span>
-            <span class="skill-tag">Performance Testing</span>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-tag">skills</div>
+        <h2 class="section-title">Technical Toolkit</h2>
+        <p class="section-sub">Languages, tools, and credentials used to build and ship real projects.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>Technical Skills</h3>
+          <div class="tag-row">
+            <span class="tag">C</span><span class="tag">C++</span><span class="tag">HTML5</span>
+            <span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Python</span>
+            <span class="tag">SQL</span><span class="tag">MS-Office</span>
           </div>
         </div>
-
-        <div class="skill-category fade-in delay-1">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">🎮</div>
-            <div class="skill-cat-title">Game QA</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Game Mechanics Testing</span>
-            <span class="skill-tag">Level Design QA</span>
-            <span class="skill-tag">Physics Validation</span>
-            <span class="skill-tag">AI Behavior Testing</span>
-            <span class="skill-tag">Multiplayer Testing</span>
-            <span class="skill-tag">Platform Compliance</span>
+        <div class="skill-card reveal">
+          <h3>Tools &amp; Frameworks</h3>
+          <div class="tag-row">
+            <span class="tag">ReactJS</span><span class="tag">MySQL</span><span class="tag">Power BI</span>
+            <span class="tag">PyCharm</span><span class="tag">Code::Blocks</span><span class="tag">VS Code</span>
+            <span class="tag">GitHub</span><span class="tag">Git</span>
           </div>
         </div>
-
-        <div class="skill-category fade-in delay-2">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">🛠️</div>
-            <div class="skill-cat-title">Tools</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Jira</span>
-            <span class="skill-tag">TestRail</span>
-            <span class="skill-tag">Bugzilla</span>
-            <span class="skill-tag">Selenium</span>
-            <span class="skill-tag">Postman</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">VS Code</span>
+        <div class="skill-card reveal">
+          <h3>Certifications</h3>
+          <div class="tag-row">
+            <span class="tag">Data Science with AI &amp; ML</span>
+            <span class="tag">Data Analyst Certificate</span>
           </div>
         </div>
-
-        <div class="skill-category fade-in delay-3">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">💻</div>
-            <div class="skill-cat-title">Programming</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">HTML / CSS</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Bash</span>
-          </div>
-          <div style="margin-top:1.25rem">
-            <div class="skill-bar-item">
-              <div class="skill-bar-label"><span>Manual Testing</span><span>95%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-label"><span>Bug Reporting</span><span>90%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══ PROJECTS ═══ -->
-  <section id="projects">
-    <div class="section-inner">
-      <p class="section-label">03 / Projects</p>
-      <h2 class="section-title fade-in">Selected Work</h2>
-      <div class="section-line fade-in"></div>
-
-      <div class="projects-grid">
-
-        <article class="project-card fade-in">
-          <div class="project-thumb" aria-hidden="true">🕹️</div>
-          <div class="project-body">
-            <h3 class="project-title">Game Bug Tracker</h3>
-            <p class="project-desc">A comprehensive bug tracking system built specifically for indie game studios. Features bug lifecycle management, severity classification, and reproducibility tracking.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">SQLite</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">QA</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/ayushwandhare" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-              <a href="#" class="project-link secondary">Live Demo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card fade-in delay-1">
-          <div class="project-thumb" aria-hidden="true">📋</div>
-          <div class="project-body">
-            <h3 class="project-title">Test Case Generator</h3>
-            <p class="project-desc">Automated tool that generates structured test cases from game design documents. Reduces test planning time by up to 60% for mid-size game projects.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">NLP</span>
-              <span class="project-tag">Automation</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/ayushwandhare" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card fade-in delay-2">
-          <div class="project-thumb" aria-hidden="true">🌐</div>
-          <div class="project-body">
-            <h3 class="project-title">Portfolio Website</h3>
-            <p class="project-desc">This very portfolio — designed and built from scratch with dark/light mode, smooth animations, and fully responsive layout. Pure HTML, CSS, and Vanilla JS.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/ayushwandhare/Portfolio" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-              <a href="https://ayushwandhare.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" class="project-link secondary">Live →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card fade-in delay-3">
-          <div class="project-thumb" aria-hidden="true">📊</div>
-          <div class="project-body">
-            <h3 class="project-title">QA Metrics Dashboard</h3>
-            <p class="project-desc">Visual dashboard to track QA KPIs: bug escape rate, test coverage, and defect density. Helps teams make data-driven decisions about release readiness.</p>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">Chart.js</span>
-              <span class="project-tag">Analytics</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/ayushwandhare" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-            </div>
-          </div>
-        </article>
-
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-tag">experience</div>
+        <h2 class="section-title">Internships</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ EDUCATION ═══ -->
-  <section id="education">
-    <div class="section-inner">
-      <p class="section-label">04 / Education</p>
-      <h2 class="section-title fade-in">Academic Background</h2>
-      <div class="section-line fade-in"></div>
-
       <div class="timeline">
-
-        <div class="timeline-item fade-in">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-date">2021 — 2025</div>
-          <h3 class="timeline-title">Bachelor of Engineering — Computer Science</h3>
-          <p class="timeline-sub">Nagpur University, Nagpur</p>
-          <p class="timeline-body">Studied core CS fundamentals, software engineering, data structures, algorithms, and database management. Completed multiple projects in web development, automation, and software testing.</p>
-          <div class="timeline-grade">CGPA: 7.5 / 10</div>
+        <div class="t-item reveal">
+          <div class="t-head">
+            <div>
+              <div class="t-role">Summer Intern</div>
+              <div class="t-org">UpSkill Campus</div>
+            </div>
+            <div class="t-date">July 2026 – Present</div>
+          </div>
+          <ul class="t-list">
+            <li>Built and maintained RESTful APIs using Java and Spring Boot, supporting key features in a production-grade web application, and conducted unit testing using Postman.</li>
+            <li>Assisted in managing application deployments using Kubernetes, including writing basic deployment and service YAML files.</li>
+          </ul>
         </div>
-
-        <div class="timeline-item fade-in delay-1">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-date">2019 — 2021</div>
-          <h3 class="timeline-title">Higher Secondary Certificate (HSC)</h3>
-          <p class="timeline-sub">Maharashtra State Board, Nagpur</p>
-          <p class="timeline-body">Completed 12th grade with a focus on Science (Physics, Chemistry, Mathematics). Developed strong analytical and problem-solving foundations.</p>
-          <div class="timeline-grade">Score: 82.4%</div>
-        </div>
-
-        <div class="timeline-item fade-in delay-2">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-date">2017 — 2019</div>
-          <h3 class="timeline-title">Secondary School Certificate (SSC)</h3>
-          <p class="timeline-sub">Maharashtra State Board, Nagpur</p>
-          <p class="timeline-body">Completed 10th grade with distinction, excelling in Mathematics and Science subjects.</p>
-          <div class="timeline-grade">Score: 88.6%</div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══ CERTIFICATIONS ═══ -->
-  <section id="certifications">
-    <div class="section-inner">
-      <p class="section-label">05 / Certifications</p>
-      <h2 class="section-title fade-in">Credentials &amp; Courses</h2>
-      <div class="section-line fade-in"></div>
-
-      <div class="cert-grid">
-
-        <div class="cert-card fade-in">
-          <div class="cert-icon">📜</div>
-          <div class="cert-info">
-            <div class="cert-title">ISTQB Foundation Level</div>
-            <div class="cert-issuer">ISTQB — International Software Testing Qualifications Board</div>
-            <div class="cert-badge">2024</div>
-          </div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-tag">projects</div>
+        <h2 class="section-title">Featured Work</h2>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-title">CineVerse</div>
+          <a class="project-link" href="https://github.com/TanmayKhodankar/cineverse-frontend" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+            GitHub Repo
+          </a>
         </div>
-
-        <div class="cert-card fade-in delay-1">
-          <div class="cert-icon">🧪</div>
-          <div class="cert-info">
-            <div class="cert-title">Software Testing Fundamentals</div>
-            <div class="cert-issuer">Coursera — University of Minnesota</div>
-            <div class="cert-badge">2023</div>
-          </div>
+        <ul class="t-list">
+          <li>Designed and built all 8 frontend modules (App.jsx, Home, Search, MovieDetail, Watchlist, Auth, Admin, Nav) using React 18 + Vite, with App.jsx as the central shell managing routing, global auth state, and the Socket.io connection.</li>
+          <li>Built the complete JWT flow — token storage, automatic Bearer header injection, silent auto-refresh on 401 errors, and role-based UI rendering (Admin tab shown only to ADMIN users) — mirroring real-world SaaS security patterns.</li>
+          <li>Integrated Socket.io client to instantly reflect live events (review likes, new followers) through toast notifications and a live-updating bell badge, improving perceived responsiveness.</li>
+          <li>Used Recharts to build live area/bar charts for platform analytics alongside a user management table, converting statistics into a clear, visual decision-making tool.</li>
+        </ul>
+        <div class="stack-row">
+          <span class="stack-chip">React 18</span><span class="stack-chip">Vite</span><span class="stack-chip">Socket.io</span>
+          <span class="stack-chip">JWT</span><span class="stack-chip">Recharts</span>
         </div>
-
-        <div class="cert-card fade-in delay-2">
-          <div class="cert-icon">🐍</div>
-          <div class="cert-info">
-            <div class="cert-title">Python for Automation</div>
-            <div class="cert-issuer">Udemy</div>
-            <div class="cert-badge">2023</div>
-          </div>
-        </div>
-
-        <div class="cert-card fade-in delay-3">
-          <div class="cert-icon">🎮</div>
-          <div class="cert-info">
-            <div class="cert-title">Game Testing Fundamentals</div>
-            <div class="cert-issuer">LinkedIn Learning</div>
-            <div class="cert-badge">2022</div>
-          </div>
-        </div>
-
-        <div class="cert-card fade-in">
-          <div class="cert-icon">🌐</div>
-          <div class="cert-info">
-            <div class="cert-title">Web Development Bootcamp</div>
-            <div class="cert-issuer">Udemy — Angela Yu</div>
-            <div class="cert-badge">2022</div>
-          </div>
-        </div>
-
-        <div class="cert-card fade-in delay-1">
-          <div class="cert-icon">📊</div>
-          <div class="cert-info">
-            <div class="cert-title">Agile Testing Methodology</div>
-            <div class="cert-issuer">Scrum Alliance</div>
-            <div class="cert-badge">2024</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══ CONTACT ═══ -->
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-tag">education</div>
+        <h2 class="section-title">Academic Background</h2>
+      </div>
+      <div class="timeline">
+        <div class="t-item reveal">
+          <div class="t-head">
+            <div>
+              <div class="t-role">Bachelor of Technology, Information Technology</div>
+              <div class="t-org">Samrat Ashok Technological Institute — Vidisha, India</div>
+            </div>
+            <div class="t-date">Jul 2023 – Present</div>
+          </div>
+          <p style="color:var(--text-muted);font-size:.95rem;margin-top:6px;">Cumulative GPA: 6.5 / 10</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-head">
+            <div>
+              <div class="t-role">Higher Secondary School — M.H. State Board</div>
+              <div class="t-org">Gurukunj Convent and Jr. College — Nagpur, India</div>
+            </div>
+            <div class="t-date">Apr 2023</div>
+          </div>
+          <p style="color:var(--text-muted);font-size:.95rem;margin-top:6px;">Cumulative Percentage: 60.12%</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-head">
+            <div>
+              <div class="t-role">Senior School — C.B.S.E.</div>
+              <div class="t-org">Kailashpat Singhania High School — Chhindwara, India</div>
+            </div>
+            <div class="t-date">Apr 2021</div>
+          </div>
+          <p style="color:var(--text-muted);font-size:.95rem;margin-top:6px;">Cumulative GPA: 62.21%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-tag">activities</div>
+        <h2 class="section-title">Leadership &amp; Involvement</h2>
+      </div>
+      <div class="activity-card reveal">
+        <div class="activity-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="t-role" style="font-size:1.05rem;">Member, Organizing Committee</div>
+          <div class="t-org" style="margin-bottom:8px;">Samrat Utsav '25 — Vidisha, India</div>
+          <p style="color:var(--text-muted);font-size:.95rem;">Member of the college event organizing committee; collaborated with team members to plan, coordinate, and successfully manage the event.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
-    <div class="section-inner">
-      <p class="section-label">06 / Contact</p>
-      <h2 class="section-title fade-in">Let's work together</h2>
-      <div class="section-line fade-in"></div>
-
-      <div class="contact-grid">
-
-        <div class="contact-info">
-          <p class="fade-in">Looking for a dedicated QA tester for your game project? Got a bug that needs squashing? Or just want to chat about quality assurance? Reach out — I'd love to hear from you.</p>
-          <div class="contact-links">
-            <a href="mailto:ayushwandhare@gmail.com" class="contact-link-item fade-in">
-              <div class="contact-link-icon">📧</div>
-              <div class="contact-link-text">
-                <strong>Email</strong>
-                <span>ayushwandhare@gmail.com</span>
-              </div>
-            </a>
-            <a href="https://github.com/ayushwandhare" target="_blank" rel="noopener noreferrer" class="contact-link-item fade-in delay-1">
-              <div class="contact-link-icon">🐙</div>
-              <div class="contact-link-text">
-                <strong>GitHub</strong>
-                <span>github.com/ayushwandhare</span>
-              </div>
-            </a>
-            <a href="https://linkedin.com/in/ayushwandhare" target="_blank" rel="noopener noreferrer" class="contact-link-item fade-in delay-2">
-              <div class="contact-link-icon">💼</div>
-              <div class="contact-link-text">
-                <strong>LinkedIn</strong>
-                <span>linkedin.com/in/ayushwandhare</span>
-              </div>
-            </a>
-          </div>
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <h2>Let's build something together</h2>
+        <p>Open to internships and software engineering opportunities. Reach out any time.</p>
+        <div class="contact-btns">
+          <a href="mailto:tanmaykhodankar05@gmail.com" class="btn btn-primary">Say Hello</a>
+          <a href="https://www.linkedin.com/in/tanmay-khodankar-2a7b412a0/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+          <a href="https://github.com/TanmayKhodankar" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
         </div>
-
-        <form class="contact-form fade-in delay-1" id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="cf-name">Your Name</label>
-            <input type="text" id="cf-name" name="name" placeholder="John Doe" autocomplete="name" required />
-          </div>
-          <div class="form-group">
-            <label for="cf-email">Email Address</label>
-            <input type="email" id="cf-email" name="email" placeholder="john@example.com" autocomplete="email" required />
-          </div>
-          <div class="form-group">
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" name="subject" placeholder="Project collaboration..." />
-          </div>
-          <div class="form-group">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
-          </div>
-          <p id="form-status" aria-live="polite"></p>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message →</button>
-        </form>
-
       </div>
     </div>
   </section>
+</main>
 
-  <!-- ═══ FOOTER ═══ -->
-  <footer>
-    <div class="footer-logo">AW // QA</div>
-    <span>© 2025 Ayush Wandhare. Built with ♥ &amp; lots of test cases.</span>
-    <div class="footer-links">
-      <a href="https://github.com/ayushwandhare" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://linkedin.com/in/ayushwandhare" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="#hero">Top ↑</a>
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-links">
+      <a href="mailto:tanmaykhodankar05@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/tanmay-khodankar-2a7b412a0/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/TanmayKhodankar" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
-  </footer>
-
-  <!-- Scroll-to-top button -->
-  <button id="scroll-top" aria-label="Scroll to top" title="Back to top">↑</button>
-
-  <!-- Script -->
+    <a href="#top" class="back-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </a>
+    <div>© 2026 Tanmay Khodankar — built with vanilla HTML, CSS &amp; JS</div>
+  </div>
+</footer>
+ <!-- Script -->
   <script src="script.js"></script>
-
 </body>
 </html>
