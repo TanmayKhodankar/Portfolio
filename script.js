@@ -42,7 +42,7 @@
   revealEls.forEach(function(el){ revealObserver.observe(el); });
 
   // Typing role rotator
-  var roles = ['Software Developer', 'Data Analyst', 'B.Tech IT Student'];
+  var roles = ['Software Developer', 'Data Engineer', 'B.Tech IT Student'];
   var el = document.getElementById('typedRole');
   var ri = 0, ci = 0, deleting = false;
 
