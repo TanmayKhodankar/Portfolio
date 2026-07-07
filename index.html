@@ -3,15 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tanmay Khodankar — Software Developer & Data Analyst</title>
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0d1b2a" id="themeColorMeta">
+<title>Tanmay Khodankar | Portfolio</title>
+<script>
+  /* Set theme before first paint to avoid a flash of the wrong theme */
+  (function(){
+    try{
+      var saved = localStorage.getItem('theme');
+      var theme = saved ? saved : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      if(theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    }catch(e){}
+  })();
+</script>
 <meta name="description" content="Portfolio of Tanmay Khodankar — B.Tech IT candidate specializing in data analytics and software development.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tanmay Khodankar — Software Developer & Data Analyst">
+<meta property="og:description" content="B.Tech IT candidate (2027) building with Python, SQL, and React — focused on data analytics and software development.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d1b2a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff8c42'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+  
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <header class="site-nav">
   <div class="nav-inner">
@@ -28,6 +47,10 @@
       <a href="#contact" class="nav-link">contact</a>
     </nav>
     <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
       <a class="icon-btn" href="https://github.com/TanmayKhodankar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.21.66.8.55A10.53 10.53 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
       </a>
@@ -39,7 +62,11 @@
       </a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line class="bar bar1" x1="3" y1="6" x2="21" y2="6"/>
+        <line class="bar bar2" x1="3" y1="12" x2="21" y2="12"/>
+        <line class="bar bar3" x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
     </button>
   </div>
 </header>
@@ -49,10 +76,10 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow"><span class="blink"></span> Open to Software Engineering roles</div>
+        <div class="eyebrow"><span class="blink"></span> Open to Software/Data Engineering roles</div>
         <h1 class="hero-title">Tanmay <span class="accent">Khodankar</span></h1>
-        <div class="hero-role">&gt; <span id="typedRole"></span><span class="cursor"></span></div>
-        <p class="hero-desc">B.Tech Information Technology candidate (2027) focused on <strong style="color:var(--text-primary)">data analytics</strong> and <strong style="color:var(--text-primary)">software development</strong> — building with Python, SQL, and React while turning raw data into decisions.</p>
+        <div class="hero-role">&gt; <span id="typedRole" aria-live="polite"></span><span class="cursor"></span></div>
+        <p class="hero-desc">B.Tech Information Technology candidate (2027) focused on <strong>data analytics</strong> and <strong>software development</strong> — building with Python, SQL, and React while turning raw data into decisions.</p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">View Projects</a>
           <a href="mailto:tanmaykhodankar05@gmail.com" class="btn btn-ghost">Get in Touch</a>
@@ -64,7 +91,7 @@
         </div>
       </div>
 
-      <div class="editor reveal">
+      <div class="editor reveal" id="editorCard">
         <div class="editor-bar">
           <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
           <span class="editor-tab">profile.py</span>
@@ -150,8 +177,10 @@
             <div class="t-date">July 2026 – Present</div>
           </div>
           <ul class="t-list">
-            <li>Built and maintained RESTful APIs using Java and Spring Boot, supporting key features in a production-grade web application, and conducted unit testing using Postman.</li>
-            <li>Assisted in managing application deployments using Kubernetes, including writing basic deployment and service YAML files.</li>
+            <li>Built Cleaned, transformed, and analyzed 100,000+ records using Python, MySQL, and MS Excel, improving data quality by 95% through data wrangling and exploratory data analysis (EDA).</li>
+            <li>Designed 5+ interactive dashboards in Power BI and Tableau, reducing reporting time by 70% and enabling faster, data-driven decision-making. </li>
+            <li>Automated data preprocessing, reporting, and analytics workflows using Python and SQL, reducing manual effort by 80% and improving query performance by 40%.</li>
+            <li>Delivered 3+ end-to-end analytics projects by integrating Python, MySQL, Excel, Machine Learning, Power BI, Tableau, and AI, improving reporting accuracy by 30% while consistently meeting project deadlines.</li>
           </ul>
         </div>
       </div>
@@ -203,7 +232,7 @@
             </div>
             <div class="t-date">Jul 2023 – Present</div>
           </div>
-          <p style="color:var(--text-muted);font-size:.95rem;margin-top:6px;">Cumulative GPA: 6.5 / 10</p>
+          <p class="t-note">Cumulative GPA: 6.5 / 10</p>
         </div>
         <div class="t-item reveal">
           <div class="t-head">
@@ -213,7 +242,7 @@
             </div>
             <div class="t-date">Apr 2023</div>
           </div>
-          <p style="color:var(--text-muted);font-size:.95rem;margin-top:6px;">Cumulative Percentage: 60.12%</p>
+          <p class="t-note">Cumulative Percentage: 60.12%</p>
         </div>
         <div class="t-item reveal">
           <div class="t-head">
@@ -223,7 +252,7 @@
             </div>
             <div class="t-date">Apr 2021</div>
           </div>
-          <p style="color:var(--text-muted);font-size:.95rem;margin-top:6px;">Cumulative GPA: 62.21%</p>
+          <p class="t-note">Cumulative GPA: 62.21%</p>
         </div>
       </div>
     </div>
@@ -243,7 +272,7 @@
         <div>
           <div class="t-role" style="font-size:1.05rem;">Member, Organizing Committee</div>
           <div class="t-org" style="margin-bottom:8px;">Samrat Utsav '25 — Vidisha, India</div>
-          <p style="color:var(--text-muted);font-size:.95rem;">Member of the college event organizing committee; collaborated with team members to plan, coordinate, and successfully manage the event.</p>
+          <p class="t-note">Member of the college event organizing committee; collaborated with team members to plan, coordinate, and successfully manage the event.</p>
         </div>
       </div>
     </div>
@@ -267,15 +296,15 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div class="foot-links">
+    <!--<div class="foot-links">
       <a href="mailto:tanmaykhodankar05@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/tanmay-khodankar-2a7b412a0/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/TanmayKhodankar" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
+    </div>-->
     <a href="#top" class="back-top" aria-label="Back to top">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
     </a>
-    <div>© 2026 Tanmay Khodankar — built with vanilla HTML, CSS &amp; JS</div>
+    <div>© 2026 by Tanmay Khodankar — built with vanilla HTML, CSS &amp; JS</div>
   </div>
 </footer>
  <!-- Script -->
